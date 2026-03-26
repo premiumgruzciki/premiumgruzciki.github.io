@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Премиум Грузчики - Профессиональные грузчики и грузоперевозки по всей России</title>
+    <meta name="description" content="Премиум Грузчики в Омске и по всей России. Низкие цены от 230₽/час, опытные грузчики, грузоперевозки. Заказать грузчиков по телефону +7 (933) 065-80-76">
+    <meta name="keywords" content="грузчики, грузоперевозки, премиум грузчики, грузчики омск, грузчики москва, переезд, такелаж">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://premium-gruzchiki.ru">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Премиум Грузчики - Профессиональные услуги по всей России">
+    <meta property="og:description" content="Грузчики и грузоперевозки от 230₽/час. Работаем в 50+ городах России. Закажите прямо сейчас!">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=1200">
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper for reviews -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #1a2a3a;
+            line-height: 1.6;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Colors */
+        :root {
+            --primary: #0A1A2F;
+            --secondary: #F5A623;
+            --secondary-dark: #e0910f;
+            --gray-light: #f8f9fa;
+            --gray: #6c757d;
+            --dark: #1a2a3a;
+            --success: #28a745;
+        }
+
+        /* Header */
+        .top-bar {
+            background: var(--primary);
+            color: white;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .top-bar a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        .city-selector {
+            background: rgba(255,255,255,0.1);
+            padding: 5px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            border: none;
+            color: white;
+            font-family: inherit;
+            font-size: 14px;
+        }
+
+        .main-header {
+            background: white;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .logo p {
+            font-size: 12px;
+            color: var(--gray);
+        }
+
+        .header-contact {
+            text-align: right;
+        }
+
+        .header-contact .phone {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .header-contact .btn-call {
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 5px;
+            transition: all 0.3s;
+        }
+
+        .header-contact .btn-call:hover {
+            background: var(--secondary-dark);
+            transform: scale(1.05);
+        }
+
+        /* Navigation */
+        .nav {
+            background: var(--primary);
+        }
+
+        .nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            padding: 12px 0;
+            flex-wrap: wrap;
+        }
+
+        .nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav ul li a:hover {
+            color: var(--secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e3a5f 100%);
+            color: white;
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=1600') center/cover;
+            opacity: 0.15;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--secondary);
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 14px 35px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--secondary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: var(--secondary);
+            color: var(--primary);
+        }
+
+        .hero-form {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            color: var(--dark);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .hero-form h3 {
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+        }
+
+        /* Advantages */
+        .advantages {
+            padding: 60px 0;
+            background: var(--gray-light);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: var(--primary);
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .advantage-card {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+
+        .advantage-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .advantage-card i {
+            font-size: 48px;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .counter {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--secondary);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 60px 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 15px;
+            padding: 20px;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .service-card h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .price {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .price-current {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--secondary);
+        }
+
+        .price-old {
+            font-size: 16px;
+            color: var(--gray);
+            text-decoration: line-through;
+        }
+
+        .service-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            width: 100%;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .service-btn:hover {
+            background: var(--secondary);
+            color: var(--primary);
+        }
+
+        /* Reviews */
+        .reviews {
+            background: var(--gray-light);
+            padding: 60px 0;
+        }
+
+        .swiper {
+            padding: 20px;
+        }
+
+        .review-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .review-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .review-card h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .stars {
+            color: var(--secondary);
+            margin: 10px 0;
+        }
+
+        /* Cities Page */
+        .cities-section {
+            padding: 60px 0;
+        }
+
+        .cities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 15px;
+        }
+
+        .city-item {
+            background: var(--gray-light);
+            padding: 12px;
+            text-align: center;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .city-item:hover {
+            background: var(--secondary);
+            color: white;
+        }
+
+        /* Contacts */
+        .contacts {
+            padding: 60px 0;
+        }
+
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info {
+            background: var(--primary);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .contact-info i {
+            color: var(--secondary);
+            margin-right: 10px;
+            width: 25px;
+        }
+
+        .contact-info p {
+            margin: 15px 0;
+        }
+
+        .map {
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary);
+            color: white;
+            padding: 40px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .header-contact {
+                text-align: center;
+            }
+            .nav ul {
+                justify-content: center;
+                gap: 15px;
+            }
+            .contacts-grid {
+                grid-template-columns: 1fr;
+            }
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-bar">
+    <div class="container">
+        <div>
+            <i class="fas fa-clock"></i> Ежедневно с 8:00 до 22:00
+        </div>
+        <div>
+            <i class="fas fa-city"></i>
+            <select id="citySelect" class="city-selector">
+                <option value="Москва">Москва</option>
+                <option value="Санкт-Петербург">Санкт-Петербург</option>
+                <option value="Новосибирск">Новосибирск</option>
+                <option value="Екатеринбург">Екатеринбург</option>
+                <option value="Казань">Казань</option>
+                <option value="Нижний Новгород">Нижний Новгород</option>
+                <option value="Челябинск">Челябинск</option>
+                <option value="Омск" selected>Омск</option>
+                <option value="Самара">Самара</option>
+                <option value="Ростов-на-Дону">Ростов-на-Дону</option>
+                <option value="Уфа">Уфа</option>
+                <option value="Красноярск">Красноярск</option>
+                <option value="Пермь">Пермь</option>
+                <option value="Воронеж">Воронеж</option>
+                <option value="Волгоград">Волгоград</option>
+                <option value="Краснодар">Краснодар</option>
+                <option value="Саратов">Саратов</option>
+                <option value="Тюмень">Тюмень</option>
+                <option value="Тольятти">Тольятти</option>
+                <option value="Ижевск">Ижевск</option>
+                <option value="Барнаул">Барнаул</option>
+                <option value="Ульяновск">Ульяновск</option>
+                <option value="Иркутск">Иркутск</option>
+                <option value="Хабаровск">Хабаровск</option>
+                <option value="Ярославль">Ярославль</option>
+                <option value="Владивосток">Владивосток</option>
+                <option value="Махачкала">Махачкала</option>
+                <option value="Томск">Томск</option>
+                <option value="Оренбург">Оренбург</option>
+                <option value="Кемерово">Кемерово</option>
+                <option value="Новокузнецк">Новокузнецк</option>
+                <option value="Рязань">Рязань</option>
+                <option value="Астрахань">Астрахань</option>
+                <option value="Набережные Челны">Набережные Челны</option>
+                <option value="Пенза">Пенза</option>
+                <option value="Липецк">Липецк</option>
+                <option value="Киров">Киров</option>
+                <option value="Калининград">Калининград</option>
+                <option value="Курск">Курск</option>
+                <option value="Улан-Удэ">Улан-Удэ</option>
+                <option value="Ставрополь">Ставрополь</option>
+                <option value="Сочи">Сочи</option>
+                <option value="Тверь">Тверь</option>
+                <option value="Магнитогорск">Магнитогорск</option>
+                <option value="Белгород">Белгород</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<header class="main-header">
+    <div class="container header-content">
+        <div class="logo">
+            <h1>Премиум <span>Грузчики</span></h1>
+            <p>Профессионально • Надежно • Доступно</p>
+        </div>
+        <div class="header-contact">
+            <a href="tel:+79330658076" class="phone">+7 (933) 065-80-76</a>
+            <a href="#" class="btn-call" id="callbackBtn">Заказать звонок</a>
+        </div>
+    </div>
+</header>
+
+<nav class="nav">
+    <div class="container">
+        <ul>
+            <li><a href="#home">Главная</a></li>
+            <li><a href="#services">Услуги и цены</a></li>
+            <li><a href="#about">О компании</a></li>
+            <li><a href="#cities">Города</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <div>
+                <h1>Грузчики в <span id="cityDisplay">Омске</span> <br>от <span>230 ₽/час</span></h1>
+                <p>Профессиональные грузчики и грузоперевозки по всей России. Работаем быстро, аккуратно и с гарантией качества.</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn-primary">Выбрать услугу</a>
+                    <a href="#contacts" class="btn-outline">Связаться</a>
+                </div>
+            </div>
+            <div class="hero-form">
+                <h3>Оставьте заявку</h3>
+                <form id="quickForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Ваше имя" id="quickName" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Телефон" id="quickPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="quickService">
+                            <option value="Грузчик на час">Грузчик на час</option>
+                            <option value="Квартирный переезд">Квартирный переезд</option>
+                            <option value="Грузоперевозки">Грузоперевозки</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width:100%">Отправить заявку</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages -->
+    <section class="advantages">
+        <div class="container">
+            <h2 class="section-title">Почему выбирают нас</h2>
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <i class="fas fa-truck"></i>
+                    <div class="counter">50+</div>
+                    <h3>Городов России</h3>
+                    <p>Работаем по всей стране</p>
+                </div>
+                <div class="advantage-card">
+                    <i class="fas fa-clock"></i>
+                    <div class="counter">15 мин</div>
+                    <h3>Прибытие</h3>
+                    <p>Быстрый выезд бригады</p>
+                </div>
+                <div class="advantage-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <div class="counter">100%</div>
+                    <h3>Сохранность</h3>
+                    <p>Страховка груза</p>
+                </div>
+                <div class="advantage-card">
+                    <i class="fas fa-smile"></i>
+                    <div class="counter">5000+</div>
+                    <h3>Довольных клиентов</h3>
+                    <p>Реальные отзывы</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Наши услуги и цены</h2>
+            <div class="services-grid" id="servicesGrid"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="advantages" style="background: white;">
+        <div class="container">
+            <h2 class="section-title">О компании</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600" alt="Грузчики работают" style="width:100%; border-radius:15px;">
+                </div>
+                <div>
+                    <h3 style="color: var(--secondary); margin-bottom: 20px;">Премиум Грузчики — ваш надежный партнер</h3>
+                    <p>Мы работаем на рынке грузоперевозок и услуг грузчиков более 10 лет. Наш штат включает более 100 профессиональных грузчиков, такелажников и водителей.</p>
+                    <p><strong>Наши преимущества:</strong></p>
+                    <ul style="margin-top: 15px; list-style: none;">
+                        <li><i class="fas fa-check" style="color: var(--secondary);"></i> Собственный автопарк</li>
+                        <li><i class="fas fa-check" style="color: var(--secondary);"></i> Фиксированные цены без скрытых доплат</li>
+                        <li><i class="fas fa-check" style="color: var(--secondary);"></i> Работаем с юридическими лицами (аутсорсинг)</li>
+                        <li><i class="fas fa-check" style="color: var(--secondary);"></i> Круглосуточная поддержка</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="reviews">
+        <div class="container">
+            <h2 class="section-title">Отзывы клиентов</h2>
+            <div class="swiper reviewsSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="review-card">
+                            <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Клиент">
+                            <h4>Алексей Иванов</h4>
+                            <div class="stars">★★★★★</div>
+                            <p>Заказывал переезд квартиры. Ребята приехали вовремя, все упаковали аккуратно. Рекомендую!</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="review-card">
+                            <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Клиент">
+                            <h4>Екатерина Смирнова</h4>
+                            <div class="stars">★★★★★</div>
+                            <p>Отличные грузчики! Быстро и качественно вынесли строительный мусор. Спасибо!</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="review-card">
+                            <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Клиент">
+                            <h4>Дмитрий Петров</h4>
+                            <div class="stars">★★★★★</div>
+                            <p>Заказывал грузчиков на склад. Работают профессионально, без нареканий.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cities Page -->
+    <section id="cities" class="cities-section">
+        <div class="container">
+            <h2 class="section-title">Мы работаем в городах России</h2>
+            <div class="cities-grid" id="citiesGrid"></div>
+        </div>
+    </section>
+
+    <!-- Contacts -->
+    <section id="contacts" class="contacts">
+        <div class="container">
+            <h2 class="section-title">Контакты</h2>
+            <div class="contacts-grid">
+                <div class="contact-info">
+                    <h3>Свяжитесь с нами</h3>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+79330658076" style="color: var(--secondary);">+7 (933) 065-80-76</a></p>
+                    <p><i class="fas fa-envelope"></i> premiumgruzciki@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> г. Омск, 4-я Транспортная улица, 54</p>
+                    <p><i class="fas fa-clock"></i> Ежедневно с 8:00 до 22:00</p>
+                    <form id="contactForm" style="margin-top: 25px;">
+                        <div class="form-group">
+                            <input type="text" placeholder="Ваше имя" id="contactName" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Телефон" id="contactPhone" required>
+                        </div>
+                        <button type="submit" class="btn-primary">Перезвоните мне</button>
+                    </form>
+                </div>
+                <div class="map">
+                    <iframe src="https://yandex.ru/map-widget/v1/?ll=73.377743,54.991876&z=15&pt=73.377743,54.991876,pm2rdm" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container footer-grid">
+        <div>
+            <h3>Премиум Грузчики</h3>
+            <p>Профессиональные грузчики и грузоперевозки по всей России. Надежность и качество — наш приоритет.</p>
+        </div>
+        <div>
+            <h3>Быстрые ссылки</h3>
+            <p><a href="#home">Главная</a></p>
+            <p><a href="#services">Услуги</a></p>
+            <p><a href="#contacts">Контакты</a></p>
+        </div>
+        <div>
+            <h3>Контакты</h3>
+            <p><i class="fas fa-phone"></i> <a href="tel:+79330658076">+7 (933) 065-80-76</a></p>
+            <p><i class="fas fa-envelope"></i> premiumgruzciki@gmail.com</p>
+        </div>
+    </div>
+    <div class="container copyright">
+        <p>&copy; 2024 Премиум Грузчики. Все права защищены.</p>
+    </div>
+</footer>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <h3>Заказать звонок</h3>
+        <form id="modalForm">
+            <div class="form-group">
+                <input type="text" placeholder="Ваше имя" id="modalName" required>
+            </div>
+            <div class="form-group">
+                <input type="tel" placeholder="Телефон" id="modalPhone" required>
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%">Отправить</button>
+            <button type="button" onclick="closeModal()" style="margin-top:10px; width:100%; background:#ccc; border:none; padding:10px; border-radius:8px;">Закрыть</button>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    // Services Data
+    const services = [
+        {name: "Грузчик на час", price: 255, oldPrice: 318},
+        {name: "Подъем/спуск грузов", price: 255, oldPrice: 318},
+        {name: "Грузчики мебели", price: 275, oldPrice: 343},
+        {name: "Подъем стройматериалов", price: 300, oldPrice: 375},
+        {name: "Вынос строймусора", price: 285, oldPrice: 356},
+        {name: "Квартирный переезд", price: 285, oldPrice: 356},
+        {name: "Перевозка мебели с грузчиками", price: 285, oldPrice: 356},
+        {name: "Грузоперевозки с грузчиками", price: 1500, oldPrice: 1875, unit: "₽"},
+        {name: "Грузчики такелажники", price: 290, oldPrice: 362},
+        {name: "Погрузка/выгрузка оборудования", price: 300, oldPrice: 375},
+        {name: "Грузчики разнорабочие", price: 250, oldPrice: 312},
+        {name: "Грузчики на склад", price: 230, oldPrice: 287},
+        {name: "Грузчики на стройку", price: 250, oldPrice: 312},
+        {name: "Разгрузка вагонов", price: 300, oldPrice: 375},
+        {name: "Грузчик в ночные работы", price: 295, oldPrice: 368},
+        {name: "Подсобник", price: 250, oldPrice: 312},
+        {name: "Комплектовщик", price: 250, oldPrice: 312},
+        {name: "Упаковщик", price: 250, oldPrice: 312},
+        {name: "Аутсорсинг грузчиков", price: 250, oldPrice: 312}
+    ];
+
+    // Render Services
+    function renderServices() {
+        const grid = document.getElementById('servicesGrid');
+        grid.innerHTML = services.map(s => `
+            <div class="service-card">
+                <h3>${s.name}</h3>
+                <div class="price">
+                    <span class="price-current">${s.price} ${s.unit || '₽/ч'}</span>
+                    <span class="price-old">${s.oldPrice} ${s.unit || '₽/ч'}</span>
+                </div>
+                <button class="service-btn" onclick="orderService('${s.name}')">Заказать</button>
+            </div>
+        `).join('');
+    }
+
+    // Cities
+    const citiesList = [
+        "Москва", "Санкт-Петербург", "Новосибирск", "Екатеринбург", "Казань", "Нижний Новгород", "Челябинск", "Омск", "Самара", "Ростов-на-Дону",
+        "Уфа", "Красноярск", "Пермь", "Воронеж", "Волгоград", "Краснодар", "Саратов", "Тюмень", "Тольятти", "Ижевск", "Барнаул", "Ульяновск",
+        "Иркутск", "Хабаровск", "Ярославль", "Владивосток", "Махачкала", "Томск", "Оренбург", "Кемерово", "Новокузнецк", "Рязань", "Астрахань",
+        "Набережные Челны", "Пенза", "Липецк", "Киров", "Калининград", "Курск", "Улан-Удэ", "Ставрополь", "Сочи", "Тверь", "Магнитогорск", "Белгород"
+    ];
+
+    function renderCities() {
+        const grid = document.getElementById('citiesGrid');
+        grid.innerHTML = citiesList.map(city => `
+            <div class="city-item" onclick="selectCity('${city}')">${city}</div>
+        `).join('');
+    }
+
+    let currentCity = localStorage.getItem('selectedCity') || 'Омск';
+
+    function selectCity(city) {
+        currentCity = city;
+        localStorage.setItem('selectedCity', city);
+        document.getElementById('citySelect').value = city;
+        document.getElementById('cityDisplay').innerText = getCityDeclension(city);
+        updateMetaForCity(city);
+    }
+
+    function getCityDeclension(city) {
+        if (city === 'Москва') return 'Москве';
+        if (city === 'Санкт-Петербург') return 'Санкт-Петербурге';
+        if (city === 'Омск') return 'Омске';
+        return city;
+    }
+
+    function updateMetaForCity(city) {
+        const title = `Премиум Грузчики в ${getCityDeclension(city)} — цены от 230 ₽/час | Заказать грузчиков`;
+        document.title = title;
+        document.querySelector('meta[name="description"]').content = `Премиум Грузчики в ${getCityDeclension(city)}. Низкие цены от 230₽/час, опытные грузчики, грузоперевозки. Заказать по телефону +7 (933) 065-80-76`;
+        const h1 = document.querySelector('.hero h1');
+        if (h1) h1.innerHTML = `Грузчики в <span id="cityDisplay">${getCityDeclension(city)}</span> <br>от <span>230 ₽/час</span>`;
+    }
+
+    // Telegram Send Function
+    const TELEGRAM_TOKEN = '8653907783:AAF0FlP588rMFpB00P16UUv_uTiek2fzsSQ';
+    const TELEGRAM_CHAT_ID = '8246482568';
+
+    async function sendToTelegram(service, name, phone) {
+        const city = currentCity;
+        const message = `🆕 Новая заявка!\nГород: ${city}\nУслуга: ${service}\nИмя: ${name}\nТелефон: ${phone}`;
+        const url = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`;
+        try {
+            await fetch(url, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({chat_id: TELEGRAM_CHAT_ID, text: message})
+            });
+            alert('Заявка отправлена! Мы свяжемся с вами.');
+        } catch(e) {
+            alert('Ошибка отправки. Позвоните нам по телефону.');
+        }
+    }
+
+    function orderService(serviceName) {
+        const modal = document.getElementById('modal');
+        modal.style.display = 'flex';
+        const form = document.getElementById('modalForm');
+        form.onsubmit = async (e) => {
+            e.preventDefault();
+            const name = document.getElementById('modalName').value;
+            const phone = document.getElementById('modalPhone').value;
+            await sendToTelegram(serviceName, name, phone);
+            modal.style.display = 'none';
+            form.reset();
+        };
+    }
+
+    function closeModal() {
+        document.getElementById('modal').style.display = 'none';
+    }
+
+    // Form Handlers
+    document.getElementById('quickForm').onsubmit = async (e) => {
+        e.preventDefault();
+        const name = document.getElementById('quickName').value;
+        const phone = document.getElementById('quickPhone').value;
+        const service = document.getElementById('quickService').value;
+        await sendToTelegram(service, name, phone);
+        e.target.reset();
+    };
+
+    document.getElementById('contactForm').onsubmit = async (e) => {
+        e.preventDefault();
+        const name = document.getElementById('contactName').value;
+        const phone = document.getElementById('contactPhone').value;
+        await sendToTelegram('Заявка с контактов', name, phone);
+        e.target.reset();
+    };
+
+    document.getElementById('callbackBtn').onclick = (e) => {
+        e.preventDefault();
+        document.getElementById('modal').style.display = 'flex';
+    };
+
+    document.getElementById('citySelect').onchange = (e) => {
+        selectCity(e.target.value);
+    };
+
+    // Initialize
+    renderServices();
+    renderCities();
+    selectCity(currentCity);
+
+    // Swiper
+    new Swiper('.reviewsSwiper', {
+        loop: true,
+        pagination: {el: '.swiper-pagination'},
+        autoplay: {delay: 3000},
+        breakpoints: {640: {slidesPerView: 1}, 768: {slidesPerView: 2}, 1024: {slidesPerView: 3}}
+    });
+
+    // Schema.org
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Премиум Грузчики",
+        "image": "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa",
+        "telephone": "+79330658076",
+        "email": "premiumgruzciki@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "4-я Транспортная улица, 54",
+            "addressLocality": "Омск",
+            "addressCountry": "RU"
+        },
+        "areaServed": citiesList,
+        "priceRange": "₽230 - ₽5000"
+    });
+    document.head.appendChild(script);
+</script>
+</body>
+</html>
