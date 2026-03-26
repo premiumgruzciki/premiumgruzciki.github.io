@@ -4,7 +4,7 @@
 
 ## Сайт
 
-[https://премиумгрузчики.github.io/Премиум-Грузчики/](https://премиумгрузчики.github.io/Премиум-Грузчики/)
+[https://premiumgruzciki.github.io/]
 
 ## Контакты
 
